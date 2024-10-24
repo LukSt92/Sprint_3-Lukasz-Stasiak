@@ -1,5 +1,5 @@
-const number1 = 99;
-const number2 = 7;
+const number1 = 70;
+const number2 = 0;
 const operationType = "/";
 let result;
 switch (operationType) {
@@ -14,23 +14,18 @@ switch (operationType) {
     break;
   case "/":
     if (number2 === 0) {
-      console.log(
-        "Działanie nie może być wykonane z powodu dzielenia przez zero."
-      );
+      result = "Działanie nie może być wykonane z powodu dzielenia przez zero.";
       break;
     }
     result = number1 / number2;
     break;
   default:
-    console.log("Wybrano nieprawidłową operację.");
+    result = "Wybrano nieprawidłową operację.";
 }
-if (
-  (operationType === "+" ||
-    operationType === "-" ||
-    operationType === "*" ||
-    operationType === "/") &&
-  number2 !== 0
-) {
+let answer;
+if (typeof result === "string") answer = result;
+else {
   const evenOrOdd = result % 2 === 0 ? "parzysty" : "nieparzysty";
-  console.log(`Wynik operacji to: ${result}, który jest ${evenOrOdd}.`);
+  answer = `Wynik operacji to: ${result}, który jest ${evenOrOdd}.`;
 }
+console.log(answer);

@@ -11,6 +11,7 @@ const likesJSAndIsAdult = isAdult && likesJavaScript;
 let message = `Cześć ${correctUserName}. Masz ${userAge} lat. Jesteś ${
   isAdult ? "pełnoletni." : "niepełnoletni."
 }`;
-message += likesJavaScript ? " Lubisz JavaScript." : "";
-message += isWarsawCitizen ? " Mieszkasz w Warszawie." : "";
-message += ` Twoje hobby to ${userHobby}.`;
+if (likesJavaScript) message = `${message} Lubisz JavaScript.`;
+
+if (isWarsawCitizen) message = `${message} Mieszkasz w Warszawie.`;
+message = `${message} Twoje hobby to ${userHobby}.`;
